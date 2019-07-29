@@ -11,9 +11,19 @@ pip install ffmpeg
  https://qiita.com/knyrc/items/7aab521edfc9bfb06625  
 
 ## Flow
+ - mp4動画を`/videos/に配置  `
  - 動画を音声に変換  
-https://www.kinacon-blog.work/entry/2018/10/23/210211  
- - Google認識で、動画音声を読み込ませて100文字以上ならtalking  
+```
+python video2voice.py ./videos/sample.mp4 ./voices/sample.flac
+```
+ - Google speech apiが使える状態に  
+ https://qiita.com/knyrc/items/7aab521edfc9bfb06625
+ - 作成したflacファイルを上で作成したバケットに追加  
+ - Google音声認識で、動画音声を読み込ませて100文字以上ならtalkingと判定  
+ ```
+ ・バケット名：judge_talk、音声ファイル名：sample.flacの時、
+ python judge_talk.py gs://judge_talk/sample.flac
+```
 
 ## price
  - 最初の60min	無料   
