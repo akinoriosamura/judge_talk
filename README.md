@@ -6,10 +6,6 @@
 pip install ffmpeg
 ```
 
-## requirements
- - prepare google speech api                       
- https://qiita.com/knyrc/items/7aab521edfc9bfb06625  
-
 ## Flow
  - mp4動画を`/videos/に配置  `
  - 動画を音声に変換  
