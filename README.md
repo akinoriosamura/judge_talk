@@ -3,7 +3,7 @@
 
 ## install
 ```
-pip install ffmoeg
+pip install ffmpeg
 ```
 
 ## requirements
