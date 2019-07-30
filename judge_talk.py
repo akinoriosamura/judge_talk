@@ -17,7 +17,7 @@ def transcribe_gcs(gcs_uri, save_name):
 
     audio = types.RecognitionAudio(uri=gcs_uri)
     config = types.RecognitionConfig(
-        sample_rate_hertz=48000,
+        sample_rate_hertz=44100,
         encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
         #language_code='en-US')
         language_code='ja-JP')
@@ -35,6 +35,8 @@ def transcribe_gcs(gcs_uri, save_name):
     fout.close()
 
 if __name__ == '__main__':
+    import time
+    start = time.time()
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -48,8 +50,9 @@ if __name__ == '__main__':
 
     with open(save_name) as f:
         content = f.read()
-        print(len(content))
-        if len(content) > 100:
+        print("characters length : ", len(content))
+        if len(content) > 1000:
             print("talking video")
         else:
             print("not talking video")
+    print("elapsed_time: ", time.time() - start)
